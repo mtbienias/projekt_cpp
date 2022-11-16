@@ -18,12 +18,15 @@ int main(int argc, char** argv) {
     float a, b, c, x1, x2, delta;
     int ktora_funkcja;
 
-    cout << "Wybierz postac funkcji liniowej (1/2): "<<endl;
-    cout << "1) y=ax+b"<<endl;
-    cout << "2) Ax + By + C = 0"<<endl;
-    cout << "Lub wybierz postac funkcji kwadratowej (3): "<<endl;
-    cout << "3) y=ax^2+bx+c"<<endl;
-    cout << "Wybrana funkcja: "; cin >> ktora_funkcja;
+    do {
+        system("cls");
+        cout << "Wybierz postac funkcji liniowej (1/2): "<<endl;
+        cout << "1) y=ax+b"<<endl;
+        cout << "2) Ax + By + C = 0"<<endl;
+        cout << "Lub wybierz postac funkcji kwadratowej (3): "<<endl;
+        cout << "3) y=ax^2+bx+c"<<endl;
+        cout << "Wybrana funkcja: "; cin >> ktora_funkcja;
+    } while ((ktora_funkcja!=1) && (ktora_funkcja!=2) && (ktora_funkcja!=3));
 
     switch(ktora_funkcja) {
       case 1:
@@ -62,7 +65,7 @@ int main(int argc, char** argv) {
                 cout << "Miejsca zerowe funkcji: y="<< a << "x^2 + " << b << "x + " << c << " to: " <<endl;
                 cout << "x1 = " << x1 << endl;
             } else {
-                cout << "Brak miejsc zerowych funkcji: y="<< a << "x^2 + " << b << "x + " << c << " to: " <<endl;
+                cout << "Brak miejsc zerowych funkcji: y="<< a << "x^2 + " << b << "x + " << c <<endl;
             }
         }
         break;
