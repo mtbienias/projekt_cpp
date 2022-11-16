@@ -48,11 +48,23 @@ int main(int argc, char** argv) {
 
       case 3:
         wpiszParametry(a,b,c,"kwadratowa_ogolna");
-        delta = pow(b, 2)-(4*a*c);
-        x1=(-b-sqrt(delta))/2*a;
-        x2=(-b+sqrt(delta))/2*a;
-        cout << "Miejsca zerowe funkcji: y="<< a << "x^2 + " << b << "x + " << c << " to: " <<endl;
-        cout << "x1 = " << x1 << " | x2 = " << x2 << endl;
+        if (a==0) {
+            cout << "Podana funkcja to funkcja liniowa: y=" <<b << "x + " << c <<endl;
+        } else {
+            delta = pow(b, 2)-(4*a*c);
+            if (delta>0) {
+                x1=(-b-sqrt(delta))/2*a;
+                x2=(-b+sqrt(delta))/2*a;
+                cout << "Miejsca zerowe funkcji: y="<< a << "x^2 + " << b << "x + " << c << " to: " <<endl;
+                cout << "x1 = " << x1 << " | x2 = " << x2 << endl;
+            } else if (delta=0) {
+                x1=-b/(2*a);
+                cout << "Miejsca zerowe funkcji: y="<< a << "x^2 + " << b << "x + " << c << " to: " <<endl;
+                cout << "x1 = " << x1 << endl;
+            } else {
+                cout << "Brak miejsc zerowych funkcji: y="<< a << "x^2 + " << b << "x + " << c << " to: " <<endl;
+            }
+        }
         break;
     }
 
